@@ -36,6 +36,11 @@ public class Empleado extends Persona{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
+        if (this.getNombre().equals(((Empleado) o).getNombre()))
+            if (this.getSalarioBruto().equals(((Empleado) o).getSalarioBruto()))
+                if (this.getEdad().equals(((Empleado) o).getEdad())){
+                    return true;
+                }
         Empleado empleado = (Empleado) o;
         return Objects.equals(salarioBruto, empleado.salarioBruto);
     }

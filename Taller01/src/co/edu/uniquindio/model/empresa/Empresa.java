@@ -52,4 +52,13 @@ public class Empresa {
     public int hashCode() {
         return Objects.hash(nombre, listaPersona);
     }
+
+    public boolean imprimirSalarioEmpleado(Empleado empleado) {
+        for(Persona persona: getListaPersona()){
+            if (persona.equals(empleado)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
