@@ -21,7 +21,7 @@ public class TestEmpresa {
 
         Persona persona2 = new Empleado("Ana", 23, 23445);
 
-        System.out.println(empresa.imprimirSalarioEmpleado(directivo));
+        empresa.imprimirSalarioEmpleados();
 
         //hacer un metodo que imprima el salario bruto de los empleados, debe manipular la lista personas de la empresa
     }

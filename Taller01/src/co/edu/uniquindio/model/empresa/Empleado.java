@@ -59,8 +59,4 @@ public class Empleado extends Persona{
                 '}';
     }
 
-    public void imprimirSalario(){
-        System.out.println(salarioBruto);
-    }
-
 }

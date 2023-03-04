@@ -1,13 +1,13 @@
 package co.edu.uniquindio.model.empresa;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
 public class Empresa {
     private String nombre;
     private List<Persona> listaPersona;
-
     /**
      * Constructor base de Empresa.
      */
@@ -53,12 +53,15 @@ public class Empresa {
         return Objects.hash(nombre, listaPersona);
     }
 
-    public boolean imprimirSalarioEmpleado(Empleado empleado) {
+    /**
+     * Imprime el valor del salario de los empleados
+     */
+    public void imprimirSalarioEmpleados() {
         for(Persona persona: getListaPersona()){
-            if (persona.equals(empleado)){
-                return true;
+            if (persona instanceof Empleado){
+                Empleado empleado1 = (Empleado) persona;
+                System.out.println(empleado1.getSalarioBruto());
             }
         }
-        return false;
     }
 }
