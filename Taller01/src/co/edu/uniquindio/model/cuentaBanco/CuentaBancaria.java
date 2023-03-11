@@ -3,8 +3,6 @@ package co.edu.uniquindio.model.cuentaBanco;
 import javax.swing.*;
 
 public class CuentaBancaria {
-    private String nombreTitular;
-    private String apellidoTitular;
     private String numeroCuenta;
     private Double saldo;
     private TipoCuenta tipoCuenta;
@@ -14,34 +12,13 @@ public class CuentaBancaria {
 
     /**
      * Constructor de Cuenta Bancaria.
-     * @param nombreTitular nombre del titular de la cuenta.
-     * @param apellidoTitular apellido del titular de la cuenta.
      * @param numeroCuenta numero de la cuenta.
      * @param tipoCuenta tipo de cuenta: ahorros o corriente.
      */
-    public CuentaBancaria(String nombreTitular, String apellidoTitular, String numeroCuenta, TipoCuenta tipoCuenta) {
-        this.nombreTitular = nombreTitular;
-        this.apellidoTitular = apellidoTitular;
+    public CuentaBancaria(String numeroCuenta, TipoCuenta tipoCuenta) {
         this.numeroCuenta = numeroCuenta;
         this.tipoCuenta = tipoCuenta;
         this.saldo = 0d;
-
-    }
-
-    public String getNombreTitular() {
-        return nombreTitular;
-    }
-
-    public void setNombreTitular(String nombreTitular) {
-        this.nombreTitular = nombreTitular;
-    }
-
-    public String getApellidoTitular() {
-        return apellidoTitular;
-    }
-
-    public void setApellidoTitular(String apellidoTitular) {
-        this.apellidoTitular = apellidoTitular;
     }
 
     public String getNumeroCuenta() {
@@ -67,8 +44,6 @@ public class CuentaBancaria {
     @Override
     public String toString() {
         return "CuentaBancaria{" +
-                "NombreTitular='" + nombreTitular + '\'' +
-                ", ApellidoTitular='" + apellidoTitular + '\'' +
                 ", numeroCuenta='" + numeroCuenta + '\'' +
                 ", saldo=" + saldo +
                 ", tipoCuenta=" + tipoCuenta +
@@ -80,7 +55,7 @@ public class CuentaBancaria {
      * @return saldo actual de la cuenta
      */
     public void consultarSaldo(){
-        JOptionPane.showMessageDialog(null, nombreTitular + " " + apellidoTitular + " su saldo actual: " + saldo);
+        JOptionPane.showMessageDialog(null, " su saldo actual: " + saldo);
     }
 
     /**
@@ -112,8 +87,8 @@ public class CuentaBancaria {
      * @param cuentaB cuenta bancaria a comparar.
      * @return retorna True si el saldo de la cuenta es mayor o igual a la cuentaB.
      */
-    public boolean compararCuentas(CuentaBancaria cuentaB){
-        if(saldo >= cuentaB.saldo) return true;
+    public boolean compararCuentas(CuentaBancaria cuentaB) {
+        if (saldo >= cuentaB.saldo) return true;
         return false;
     }
 

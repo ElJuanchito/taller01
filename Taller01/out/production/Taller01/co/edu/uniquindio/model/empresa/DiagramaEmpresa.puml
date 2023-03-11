@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Persona {
+    - nombre:String
+    - edad: Integer
+    }
+class Empresa {
+    - nombre: String
+    - listaPersona
+    + imprimirSalarioEmpleados()
+    }
+class Cliente{
+    - telefono: String
+}
+class Directivo {
+    - categoria: Categoria;
+    - listaSubordinados;
+}
+class Empleado {
+    - salarioBruto: Double
+    }
+enum Categoria {
+    GERENTE, SUBGERENTE, ADMINISTRADOR
+}
+
+Persona <|-- Empleado
+Persona <|-- Cliente
+
+Empleado <|-- Directivo: listaSubordinados* >
+Empresa *-- Persona: listaPersonas* >
+
+Directivo -- Categoria
+
+@enduml

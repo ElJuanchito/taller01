@@ -2,22 +2,47 @@
 'https://plantuml.com/class-diagram
 
 class CuentaBancaria{
-    - nombreTitular: String
-    - apellidoTitular :String
-    - numeroCuenta: String
-    - saldo: Double
-    - tipoCuenta: TipoCuenta
+    - numeroCuenta : String
+    - saldo : Double
+    - tipoCuenta : TipoCuenta
     + consultarSaldo()
-    + retirarValor(double)
-    + consignarValor(double)
-    + compararCuentas(CuentaBancaria)
-    + enviarDinero(CuentaBancaria, double)
+    + retirarValor()
+    + consignarValor()
+    + compararCuentas()
+    + enviarDinero()
+}
+class Banco{
+    - nombre : String
+    - listaCuentas
+    - listaClientes
+    + buscarCuenta()
+    - validarCuenta()
+    + addCuenta()
+    - validarCliente()
+    + addCliente()
+    + retirarDinero()
+    + consginarDinero()
+    + tranferirDinero()
+    + consultarSaldo()
+}
+class Cliente{
+    - nombre : String
+    - apellido : String
+    - documento : String
+    - edad : Integer
+    - listaCuentas
+    + addCuenta()
+    - validarCuenta()
 }
 enum TipoCuenta {
 AHORROS, CORRIENTE
 }
+Banco *-- Cliente : < listaClientes*
+Banco *-- CuentaBancaria : < listaCuentas*
 
-CuentaBancaria -- TipoCuenta
+Cliente - CuentaBancaria : listaCuentas* <
+
+CuentaBancaria --> TipoCuenta : + tipoCuenta <
 
 
 
