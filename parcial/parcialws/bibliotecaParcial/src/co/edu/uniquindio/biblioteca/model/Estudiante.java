@@ -99,6 +99,11 @@ public class Estudiante {
                 + programa + ", estado=" + estado + ", identificacion=" + identificacion + "]";
     }
 
+    /**
+     * Verifica que la edad sea mayor a la indicada en el parametro
+     * @param edad
+     * @return
+     */
     public boolean verificarEdad(int edad) {
         return getEdadEstudiante() > edad;
     }

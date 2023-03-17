@@ -10,9 +10,13 @@ public class Prestamo {
     private ArrayList<DetallePrestamo> listaDetallePrestamo;
     private Empleado empleadoPrestamo;
 
-
-
-
+    /**
+     * Este es constructor de la clase Prestamo
+     * @param fecha
+     * @param total
+     * @param tiempoEntrega
+     * @param codio
+     */
     public Prestamo(String fecha, double total, int tiempoEntrega, String codio) {
         super();
         this.fecha = fecha;
@@ -21,8 +25,6 @@ public class Prestamo {
         this.codio = codio;
         this.listaDetallePrestamo = new ArrayList<DetallePrestamo>();
     }
-
-
 
     public Empleado getEmpleadoPrestamo() {
         return empleadoPrestamo;

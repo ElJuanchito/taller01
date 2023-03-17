@@ -7,7 +7,13 @@ public class Libro {
     private String isbn;
     private Tipo tipo;
 
-
+    /**
+     * Este es el constructor de la clase Libro
+     * @param titulo
+     * @param autor
+     * @param editorial
+     * @param isbn
+     */
     public Libro(String titulo, String autor, String editorial, String isbn) {
         super();
         this.titulo = titulo;
@@ -48,6 +54,14 @@ public class Libro {
         this.isbn = isbn;
     }
 
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -73,19 +87,16 @@ public class Libro {
         return true;
     }
 
+    /**
+     * verifica si el ISBN indicado es igual al del libro
+     * @param isbn2
+     * @return
+     */
     public boolean cumpleIsbn(String isbn2) {
-        if(getIsbn().equals(isbn)){
+        if(getIsbn().equals(isbn2)){
             return true;
         }else{
             return false;
         }
-    }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
     }
 }
